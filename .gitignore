@@ -1,0 +1,59 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.age
+*.sops.*
+secrets/
+credentials/
+
+# Operational and private content
+vault/
+live-vault/
+private/
+client-data/
+personal-data/
+production-data/
+backups/
+exports/
+transcripts/
+recordings/
+*.m4a
+*.mp3
+*.mp4
+*.wav
+
+# Agent-local state
+.claude/settings.local.json
+.claude/projects/
+.codex/
+memory.md
+MEMORY.md
+
+# Obsidian device state
+.obsidian/workspace.json
+.obsidian/workspaces.json
+.obsidian/cache/
+.trash/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editors and operating systems
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated reports
+reports/generated/
+dist/
+build/

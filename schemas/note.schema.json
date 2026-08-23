@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://richardham.co.uk/schemas/titr-secondbrain/note.schema.json",
+  "title": "TITR SecondBrain note metadata",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "type",
+    "title",
+    "status",
+    "classification",
+    "created",
+    "updated"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{2,127}$"
+    },
+    "type": {
+      "enum": [
+        "source",
+        "claim",
+        "concept",
+        "person",
+        "organisation",
+        "client",
+        "project",
+        "meeting",
+        "decision",
+        "commitment",
+        "risk",
+        "question",
+        "daily",
+        "review",
+        "output"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "status": {
+      "enum": [
+        "inbox",
+        "draft",
+        "proposed",
+        "verified",
+        "approved",
+        "superseded",
+        "archived",
+        "rejected"
+      ]
+    },
+    "classification": {
+      "enum": [
+        "public",
+        "internal",
+        "confidential",
+        "restricted",
+        "personal",
+        "client-scoped"
+      ]
+    },
+    "security_domain": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "review_due": {
+      "type": "string",
+      "format": "date"
+    },
+    "source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "confidence": {
+      "enum": [
+        "unknown",
+        "low",
+        "medium",
+        "high",
+        "verified"
+      ]
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": "string"
+    }
+  }
+}
